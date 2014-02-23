@@ -4,19 +4,19 @@ import View.*;
 //import Model.*;
 //import Controller.*;
 
-/*Test comment
- * can You see this
- */
 
-/*
- * Test Number 2
- */
 
 
 public class mainClass {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				try {
+					Login window = new Login();
+					window.getFrame().setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				try {
 					MainFrame frame = new MainFrame();
 					frame.setVisible(true);
