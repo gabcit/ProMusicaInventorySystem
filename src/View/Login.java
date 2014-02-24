@@ -52,7 +52,7 @@ public class Login {
 		
 		usrPassPF = new JPasswordField();
 		usrPassPF.setColumns(15);
-		usrPassPF.setEchoChar('X');
+		usrPassPF.setEchoChar('*');
 		usrPassPF.setText("usrPassPF");
 		getFrame().getContentPane().add(usrPassPF, "cell 0 1,alignx center");
 		
