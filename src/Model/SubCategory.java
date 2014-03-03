@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 /*The Concept of a Sub Category is represented by this class.
  * Sub Categories on our system will be linked to Categories which they are listed under

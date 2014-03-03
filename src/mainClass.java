@@ -1,22 +1,25 @@
 import java.awt.EventQueue;
 
-import View.*;
-import Model.*;
-import Controller.*;
+import view.*;
+import model.*;
+import controller.*;
 
 
 
 
 public class mainClass {
-	private static MainController controll = new MainController();
+	private static MainFrame view = new MainFrame();
 	private static MainModel model = new MainModel();
 	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+		
+		System.out.println("Running...");
+		
+		 EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainFrame window = new MainFrame(model, controll);
-					window.setVisible(true);
+					view.setVisible(true);
+					new MainController(view, model);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

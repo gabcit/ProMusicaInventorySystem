@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 /*The Concept of a Sale is represented by this class.
  * The saleID is for System use only

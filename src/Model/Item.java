@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 /*The Concept of an Item is represented by this class.
  * Items on our system will be linked to SubCategories which they are listed under

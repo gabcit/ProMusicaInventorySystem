@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javax.swing.JTabbedPane;
 /*
@@ -13,6 +13,7 @@ public class TabsPane extends JTabbedPane {
 	 * Create the panel.
 	 */
 	public TabsPane() {
+		setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
 	}
 

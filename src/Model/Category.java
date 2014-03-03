@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 
 /*The Concept of a Category is represented by this class.

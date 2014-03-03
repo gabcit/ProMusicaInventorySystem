@@ -1,6 +1,10 @@
-package View;
+package view;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.ComponentOrientation;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,53 +12,62 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
-import Controller.MainController;
-import Model.MainModel;
+import model.MainModel;
+import controller.MainController;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = -7100419815175830650L;
 	private JPanel contentPane;
-	private MainModel model;
-	private MainController controll;
 	private LoginPanel loginTab;
+	private JMenuBar menuBar;
+	private JMenu mnFile;
+	private JMenu mnEdit;
+	private JMenu mnView;
+	private JMenu mnHelp;
+	private TabsPane tabbedPane;
 
 
 	/**
 	 * Create the frame.
 	 */
-	public MainFrame(MainModel model, MainController controll) {
-		this.model=model;
-		this.controll=controll;
+	public MainFrame() {
+		
 		loginTab = new LoginPanel();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JOptionPane.CANCEL_OPTION);
 		setBounds(100, 100, 650, 460);
 		
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnFile = new JMenu("File");
+		mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
-		JMenu mnEdit = new JMenu("Edit");
+		mnEdit = new JMenu("Edit");
 		menuBar.add(mnEdit);
 		
-		JMenu mnView = new JMenu("View");
+		mnView = new JMenu("View");
 		menuBar.add(mnView);
 		
-		JMenu mnHelp = new JMenu("Help");
+		mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.setLayout(new CardLayout());
 		setContentPane(contentPane);
 		
-		TabsPane tabbedPane = new TabsPane();
-		tabbedPane.addTab("Login", loginTab);
-		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		tabbedPane = new TabsPane();
+		contentPane.add(loginTab);
+		contentPane.add(tabbedPane);
+		tabbedPane.setVisible(false);
 		
+	
 	}
-
+	public LoginPanel getLoginPanel()
+	{
+		return loginTab;
+	}
 
 
 }
