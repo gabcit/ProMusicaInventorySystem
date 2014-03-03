@@ -14,8 +14,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import model.MainModel;
-import controller.MainController;
+import Model.MainModel;
+import Controller.MainController;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = -7100419815175830650L;

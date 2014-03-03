@@ -1,8 +1,8 @@
 import java.awt.EventQueue;
 
 import view.*;
-import model.*;
-import controller.*;
+import Model.*;
+import Controller.*;
 
 
 

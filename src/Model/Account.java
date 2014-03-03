@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 /*The Concept of an Account is represented by this class.
  * The userID is the system ID that identifies each Account on the system

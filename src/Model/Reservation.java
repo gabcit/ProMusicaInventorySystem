@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 /*The Concept of a Reservation is represented by this class.
  * The reservationID is the system ID used to identify Reservations
