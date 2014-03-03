@@ -23,11 +23,20 @@ public class MainFrame extends JFrame {
 	private LoginPanel loginTab;
 	private JMenuBar menuBar;
 	private JMenu mnFile;
-	private JMenu mnEdit;
-	private JMenu mnView;
 	private JMenu mnHelp;
 	private TabsPane tabbedPane;
 	private StockBrowseTabPabel stockBrowsingPanel;
+	private JMenu mnManageItem;
+	private JMenuItem mntmLogOut;
+	private JMenuItem mntmExit;
+	private JMenuItem mntmCorrectStockLevel;
+	private JMenuItem mntmMarkIncorrectItem;
+	private JMenu mnManageAccount;
+	private JMenuItem mntmAddNewAccount;
+	private JMenuItem mntmChangeUsername;
+	private JMenuItem mntmChangePassword;
+	private JMenuItem mntmHelp;
+	private JMenuItem mntmAbout;
 
 
 	/**
@@ -45,14 +54,41 @@ public class MainFrame extends JFrame {
 		mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
-		mnEdit = new JMenu("Edit");
-		menuBar.add(mnEdit);
+		mntmLogOut = new JMenuItem("Log Out...");
+		mnFile.add(mntmLogOut);
 		
-		mnView = new JMenu("View");
-		menuBar.add(mnView);
+		mntmExit = new JMenuItem("Exit");
+		mnFile.add(mntmExit);
+		
+		mnManageItem = new JMenu("Manage Item\r\n");
+		menuBar.add(mnManageItem);
+		
+		mntmCorrectStockLevel = new JMenuItem("Correct Stock Level");
+		mnManageItem.add(mntmCorrectStockLevel);
+		
+		mntmMarkIncorrectItem = new JMenuItem("Mark Incorrect Item");
+		mnManageItem.add(mntmMarkIncorrectItem);
+		
+		mnManageAccount = new JMenu("Manage Account");
+		menuBar.add(mnManageAccount);
+		
+		mntmAddNewAccount = new JMenuItem("Add New Account");
+		mnManageAccount.add(mntmAddNewAccount);
+		
+		mntmChangeUsername = new JMenuItem("Change Username");
+		mnManageAccount.add(mntmChangeUsername);
+		
+		mntmChangePassword = new JMenuItem("Change Password");
+		mnManageAccount.add(mntmChangePassword);
 		
 		mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
+		
+		mntmHelp = new JMenuItem("Help");
+		mnHelp.add(mntmHelp);
+		
+		mntmAbout = new JMenuItem("About");
+		mnHelp.add(mntmAbout);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new CardLayout());
