@@ -27,6 +27,7 @@ public class MainFrame extends JFrame {
 	private JMenu mnView;
 	private JMenu mnHelp;
 	private TabsPane tabbedPane;
+	private StockBrowseTabPabel stockBrowsingPanel;
 
 
 	/**
@@ -58,6 +59,8 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		
 		tabbedPane = new TabsPane();
+		stockBrowsingPanel = new StockBrowseTabPabel();
+		tabbedPane.add("Browse Stock", stockBrowsingPanel);
 		contentPane.add(loginTab);
 		contentPane.add(tabbedPane);
 		tabbedPane.setVisible(false);
@@ -67,6 +70,14 @@ public class MainFrame extends JFrame {
 	public LoginPanel getLoginPanel()
 	{
 		return loginTab;
+	}
+	public StockBrowseTabPabel getStockBrowsingPanel()
+	{
+		return stockBrowsingPanel;
+	}
+	public TabsPane getTabsPane()
+	{
+		return tabbedPane;
 	}
 
 

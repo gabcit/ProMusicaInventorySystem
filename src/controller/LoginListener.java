@@ -34,7 +34,10 @@ public class LoginListener implements ActionListener {
 			if(usrName.equals("user")&&usrPass.equals("password"))
 			{
 
-				JOptionPane.showMessageDialog(mainView, "Login Succesful!", "Succes", 1);;
+				JOptionPane.showMessageDialog(mainView, "Login Succesful!", "Succes", 1);
+				mainView.getLoginPanel().setVisible(false);
+				mainView.getTabsPane().setVisible(true);
+				
 			}
 			else
 			{
