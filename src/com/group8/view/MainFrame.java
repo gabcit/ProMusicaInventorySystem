@@ -1,4 +1,4 @@
-package view;
+package com.group8.view;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -14,19 +14,20 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import Model.MainModel;
-import Controller.MainController;
+import com.group8.controller.MainController;
+import com.group8.model.MainModel;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = -7100419815175830650L;
 	private JPanel contentPane;
-	private LoginPanel loginTab;
+	private LoginPanel loginPanel;
+	private AddExistingItemPanel addExistingItemPanel;
 	private JMenuBar menuBar;
 	private JMenu mnFile;
 	private JMenu mnHelp;
 	private TabsPane tabbedPane;
-	private StockBrowseTabPabel stockBrowsingPanel;
-	private JMenu mnManageItem;
+	private StockBrowsePanel stockBrowsingPanel;
+	private JMenu mnManageStock;
 	private JMenuItem mntmLogOut;
 	private JMenuItem mntmExit;
 	private JMenuItem mntmCorrectStockLevel;
@@ -37,6 +38,7 @@ public class MainFrame extends JFrame {
 	private JMenuItem mntmChangePassword;
 	private JMenuItem mntmHelp;
 	private JMenuItem mntmAbout;
+	private JMenuItem mntmAddNewItem;
 
 
 	/**
@@ -44,7 +46,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		
-		loginTab = new LoginPanel();
+		loginPanel = new LoginPanel();
 		setDefaultCloseOperation(JOptionPane.CANCEL_OPTION);
 		setBounds(100, 100, 650, 460);
 		
@@ -60,14 +62,17 @@ public class MainFrame extends JFrame {
 		mntmExit = new JMenuItem("Exit");
 		mnFile.add(mntmExit);
 		
-		mnManageItem = new JMenu("Manage Item\r\n");
-		menuBar.add(mnManageItem);
+		mnManageStock = new JMenu("Manage Stock");
+		menuBar.add(mnManageStock);
 		
 		mntmCorrectStockLevel = new JMenuItem("Correct Stock Level");
-		mnManageItem.add(mntmCorrectStockLevel);
+		mnManageStock.add(mntmCorrectStockLevel);
 		
 		mntmMarkIncorrectItem = new JMenuItem("Mark Incorrect Item");
-		mnManageItem.add(mntmMarkIncorrectItem);
+		mnManageStock.add(mntmMarkIncorrectItem);
+		
+		mntmAddNewItem = new JMenuItem("Add New Item");
+		mnManageStock.add(mntmAddNewItem);
 		
 		mnManageAccount = new JMenu("Manage Account");
 		menuBar.add(mnManageAccount);
@@ -95,19 +100,22 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		
 		tabbedPane = new TabsPane();
-		stockBrowsingPanel = new StockBrowseTabPabel();
+		stockBrowsingPanel = new StockBrowsePanel();
+		addExistingItemPanel = new AddExistingItemPanel();
 		tabbedPane.add("Browse Stock", stockBrowsingPanel);
-		contentPane.add(loginTab);
+		contentPane.add(loginPanel);
 		contentPane.add(tabbedPane);
+		contentPane.add(addExistingItemPanel);
+		addExistingItemPanel.setVisible(false);
 		tabbedPane.setVisible(false);
 		
 	
 	}
 	public LoginPanel getLoginPanel()
 	{
-		return loginTab;
+		return loginPanel;
 	}
-	public StockBrowseTabPabel getStockBrowsingPanel()
+	public StockBrowsePanel getStockBrowsingPanel()
 	{
 		return stockBrowsingPanel;
 	}

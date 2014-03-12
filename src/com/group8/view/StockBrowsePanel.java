@@ -1,4 +1,4 @@
-package view;
+package com.group8.view;
 
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
@@ -8,23 +8,25 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 import javax.swing.JTable;
+import java.awt.Font;
 
-public class StockBrowseTabPabel extends JPanel {
+public class StockBrowsePanel extends JPanel {
 	private JTextField searchTF;
 	private JTable table;
 
 	/**
 	 * Create the panel.
 	 */
-	public StockBrowseTabPabel() {
+	public StockBrowsePanel() {
 		setLayout(new MigLayout("", "[grow]", "[][51.00][grow]"));
 		
 		searchTF = new JTextField();
+		searchTF.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(searchTF, "flowx,cell 0 0,alignx left");
 		searchTF.setColumns(15);
 		
 		JButton btnSearch = new JButton("Search");
-		add(btnSearch, "cell 0 0");
+		add(btnSearch, "cell 0 0,growy");
 		
 		JPanel filterByPanel = new JPanel();
 		filterByPanel.setBorder(new TitledBorder(null, "Filter Results By:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
