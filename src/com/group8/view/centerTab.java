@@ -1,4 +1,4 @@
-package view;
+package com.group8.view;
 
 import javax.swing.JPanel;
 
